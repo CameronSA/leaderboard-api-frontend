@@ -71,6 +71,10 @@ export function Request() {
                 <div>
                     <Form.Text className="text-danger">{error}</Form.Text>
                 </div>
+
+                {body &&
+                    <Form.Text>{body}</Form.Text>
+                }
             </Form>
         </React.Fragment>
     )
