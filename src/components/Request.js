@@ -15,7 +15,7 @@ export function Request() {
             header: { 'Content-Type': 'application/json' },
             body: body
         }
-        fetch(endpoint)
+        fetch(endpoint, {requestOptions})
             .then(res => res.json())
             .then(
                 (result) => {
