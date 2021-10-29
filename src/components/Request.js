@@ -4,7 +4,7 @@ import { Button, DropdownButton, Dropdown, Form } from "react-bootstrap"
 export function Request() {
     const [endpoint, setEndpoint] = useState("");
     const [method, setMethod] = useState("GET");
-    const [data, setData] = useState(null);
+    const [data, setData] = useState("");
     const [error, setError] = useState(null);
     const [requiresBody, setRequiresBody] = useState(false);
     const [body, setBody] = useState("");
@@ -72,8 +72,8 @@ export function Request() {
                     <Form.Text className="text-danger">{error}</Form.Text>
                 </div>
 
-                {body &&
-                    <Form.Text>{body}</Form.Text>
+                {data &&
+                    <Form.Text>{JSON.stringify(data, null, 2)}</Form.Text>
                 }
             </Form>
         </React.Fragment>
